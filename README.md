@@ -5,6 +5,19 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/halilcosdu/laravel-logweaver/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/halilcosdu/laravel-logweaver/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/halilcosdu/laravel-logweaver.svg?style=flat-square)](https://packagist.org/packages/halilcosdu/laravel-logweaver)
 
+# Laravel LogWeaver
+
+Laravel LogWeaver is a PHP package designed to provide a simple and flexible way to log events in your Laravel application. It offers a fluent interface for creating logs, allowing you to easily specify the log level, resource, content, and storage disk.
+
+## Features
+
+- **Fluent Interface**: Easily create logs with a fluent, chainable interface.
+- **Multiple Log Levels**: Supports different log levels including 'info', 'warning', 'error', and 'critical'.
+- **Resource Specification**: Specify the resource of the log, such as 'system' or 'event'.
+- **Customizable Storage**: Choose your storage disk and directory.
+- **Parameter Validation**: Ensures the validity of log parameters before logging.
+- **Array and JSON Conversion**: Convert your logs to array or JSON format.
+- **Asynchronous Logging**: Log events asynchronously with optional waiting for the log to be written to the disk.
 
 ## Installation
 
