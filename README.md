@@ -32,9 +32,44 @@ return [
 
 ```php
 $log = LogWeaver::description('User logged in')
-        ->content(['user_id' => 1, 'email' => 'test@example.test'])
-        ->level('info')
-        ->toArray();
+    ->logResource('event')
+    ->content(['user_id' => 1, 'email' => 'test@example.com'])
+    ->level('info')
+    ->toArray();
+```
+
+```php
+$log = LogWeaver::description('System error occurred')
+    ->logResource('system')
+    ->content(['error' => 'Database connection failed'])
+    ->level('error')
+    ->log($path, $wait);
+```
+
+```php
+$log = LogWeaver::description('Payment gateway down')
+    ->logResource('event')
+    ->content(['gateway' => 'Stripe', 'status' => 'down'])
+    ->level('critical')
+    ->log();
+```
+
+```php
+$log = LogWeaver::description('Disk space running low')
+    ->logResource('system')
+    ->content(['disk_space' => '10% remaining'])
+    ->level('warning')
+    ->toJson();
+```
+
+```php
+$log = LogWeaver::description('User registered')
+    ->logResource('event')
+    ->content(['user_id' => 2, 'email' => 'newuser@example.com'])
+    ->level('info')
+    ->disk('local')
+    ->directory('custom_logs')
+    ->log();
 ```
 
 ## Testing

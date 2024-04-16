@@ -9,12 +9,9 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Sleep;
 use Illuminate\Support\Str;
-use Illuminate\Support\Traits\Dumpable;
 
 class LogWeaver implements Arrayable, Jsonable
 {
-    use Dumpable;
-
     private string $description = '';
 
     private string $logResource = 'system';
