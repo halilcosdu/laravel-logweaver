@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace HalilCosdu\LogWeaver\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class LogWeaverCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'laravel-logweaver';
 
     public $description = 'My command';
 
