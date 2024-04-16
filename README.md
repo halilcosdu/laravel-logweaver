@@ -1,4 +1,4 @@
-# This is my package laravel-logweaver
+# Laravel S3-compatible log system.
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/halilcosdu/laravel-logweaver.svg?style=flat-square)](https://packagist.org/packages/halilcosdu/laravel-logweaver)
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/halilcosdu/laravel-logweaver/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/halilcosdu/laravel-logweaver/actions?query=workflow%3Arun-tests+branch%3Amain)

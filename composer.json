@@ -1,6 +1,6 @@
 {
     "name": "halilcosdu/laravel-logweaver",
-    "description": "This is my package laravel-logweaver",
+    "description": "Laravel S3-compatible log system.",
     "keywords": [
         "HalilCosdu",
         "laravel",
