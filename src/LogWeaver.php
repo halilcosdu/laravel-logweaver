@@ -112,7 +112,7 @@ class LogWeaver implements Arrayable, Jsonable
             'log_resource' => ['required', 'in:system,event'],
             'description' => ['required', 'string'],
             'directory' => ['string'],
-            'disk' => ['string'],
+            'disk' => ['string', 'in:s3,local,ftp,sftp'],
             'content' => ['required', 'array'],
         ];
 
