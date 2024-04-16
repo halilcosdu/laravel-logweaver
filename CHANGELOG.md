@@ -2,6 +2,24 @@
 
 All notable changes to `laravel-logweaver` will be documented in this file.
 
+## v1.0.1 - 2024-04-16
+
+This release includes updates to the test suite of the `LogWeaver` class in the Laravel LogWeaver project. The tests have been rewritten using the Pest PHP testing framework, which provides a more expressive and streamlined syntax compared to traditional PHPUnit tests.
+
+The changes include tests for the following functionalities of the `LogWeaver` class:
+
+- Instantiation of the `LogWeaver` class
+- Setting the description
+- Setting the log resource
+- Setting the content
+- Setting the level
+- Setting the disk
+- Setting the directory
+
+Each of these functionalities is tested in isolation to ensure that they work as expected. The tests are designed to be run using the `vendor/bin/pest` command in the terminal.
+
+This release is a part of ongoing efforts to improve the quality and reliability of the Laravel LogWeaver project by ensuring that all major functionalities are covered by automated tests.
+
 ## v1.0.0 - 2024-04-16
 
 ### Release v1.0.0
@@ -29,6 +47,7 @@ $log = LogWeaver::description('User logged in')
     ->level('info')
     ->toArray();
 
+
 ```
 Logging a system error:
 
@@ -38,6 +57,7 @@ $log = LogWeaver::description('System error occurred')
     ->content(['error' => 'Database connection failed'])
     ->level('error')
     ->toArray();
+
 
 ```
 Logging a critical event:
@@ -49,6 +69,7 @@ $log = LogWeaver::description('Payment gateway down')
     ->level('critical')
     ->toArray();
 
+
 ```
 Logging a warning:
 
@@ -58,6 +79,7 @@ $log = LogWeaver::description('Disk space running low')
     ->content(['disk_space' => '10% remaining'])
     ->level('warning')
     ->toArray();
+
 
 ```
 Logging an event with custom disk and directory:
@@ -71,6 +93,7 @@ $log = LogWeaver::description('User registered')
     ->directory('custom_logs')
     ->toArray();
 
+
 ```
 #### Installation
 
@@ -79,11 +102,13 @@ You can install the package via composer:
 ```bash
 composer require halilcosdu/laravel-logweaver
 
+
 ```
 You can publish the config file with:
 
 ```bash
 php artisan vendor:publish --tag="logweaver-config"
+
 
 ```
 #### Testing
@@ -92,6 +117,7 @@ You can run the tests with:
 
 ```bash
 composer test
+
 
 ```
 #### Changelog
