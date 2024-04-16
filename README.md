@@ -17,7 +17,7 @@ composer require halilcosdu/laravel-logweaver
 You can publish the config file with:
 
 ```bash
-php artisan vendor:publish --tag="laravel-logweaver-config"
+php artisan vendor:publish --tag="logweaver-config"
 ```
 
 This is the contents of the published config file:
