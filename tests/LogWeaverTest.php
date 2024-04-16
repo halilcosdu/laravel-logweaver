@@ -1,5 +1,8 @@
 <?php
 
+namespace Workbench\App;
+
+use Exception;
 use HalilCosdu\LogWeaver\LogWeaver;
 
 it('can be instantiated', function () {
@@ -43,9 +46,32 @@ it('can set disk', function () {
     expect($logWeaver->getDisk())->toBe('local');
 });
 
-it('can set directory', function () {
+it('can validate parameters', function () {
     $logWeaver = new LogWeaver();
     $logWeaver->directory('custom_logs');
 
     expect($logWeaver->getDirectory())->toBe('custom_logs');
+    $logWeaver->directory('custom_logs');
+    $logWeaver->logResource('event');
+    $logWeaver->description('Test Description');
+    $logWeaver->content(['user_id' => 1]);
+    $logWeaver->level('info');
+    $logWeaver->disk('local');
+
+    try {
+        $logWeaver->toArray();
+    } catch (Exception $e) {
+        expect($e->getMessage())->toBeEmpty();
+    }
+});
+
+it('should throw exception if parameters are invalid', function () {
+    $logWeaver = new LogWeaver();
+    $logWeaver->directory('custom_logs');
+
+    try {
+        $logWeaver->toArray();
+    } catch (Exception $e) {
+        expect($e->getMessage())->not()->toBeEmpty();
+    }
 });
