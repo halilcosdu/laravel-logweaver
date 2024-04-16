@@ -1,6 +1,7 @@
 <?php
 
 // config for HalilCosdu/LogWeaver
-return [
 
+return [
+    'sleep' => env('LOG_WEAVER_SLEEP', 0.5),
 ];

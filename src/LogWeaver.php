@@ -168,7 +168,7 @@ class LogWeaver implements Arrayable, Jsonable
         $timeout = 10 * 60;
 
         do {
-            Sleep::sleep(0.5);
+            Sleep::sleep(config('logweaver.sleep'));
 
             $isFileVisible = Storage::disk($this->getDisk())->exists($path);
 
