@@ -180,11 +180,13 @@ class LogWeaver implements Arrayable, Jsonable
      */
     public function log(?string $path = null, bool $wait = false): array
     {
+        $storage = Storage::disk($this->getDisk());
+
         if (is_null($path)) {
             $path = sprintf('%s/%s.json', $this->getDirectory(), Str::random(40));
         }
 
-        $check = Storage::disk($this->getDisk())->put($path, json_encode($this->getValidatedData()));
+        $check = $storage->put($path, json_encode($this->getValidatedData()));
 
         if ($wait) {
             $this->waitForContentFromDisk($path);
@@ -193,7 +195,7 @@ class LogWeaver implements Arrayable, Jsonable
         return [
             'status' => $check,
             'path' => $path,
-            'url' => $check ? Storage::disk($this->getDisk())->url($path) : null,
+            'url' => $check ? $storage->url($path) : null,
         ];
     }
 }
