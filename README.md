@@ -14,13 +14,6 @@ You can install the package via composer:
 composer require halilcosdu/laravel-logweaver
 ```
 
-You can publish and run the migrations with:
-
-```bash
-php artisan vendor:publish --tag="laravel-logweaver-migrations"
-php artisan migrate
-```
-
 You can publish the config file with:
 
 ```bash
@@ -31,20 +24,17 @@ This is the contents of the published config file:
 
 ```php
 return [
+    'sleep' => env('LOG_WEAVER_SLEEP', 0.5),
 ];
-```
-
-Optionally, you can publish the views using
-
-```bash
-php artisan vendor:publish --tag="laravel-logweaver-views"
 ```
 
 ## Usage
 
 ```php
-$logWeaver = new HalilCosdu\LogWeaver();
-echo $logWeaver->echoPhrase('Hello, HalilCosdu!');
+$log = LogWeaver::description('User logged in')
+        ->content(['user_id' => 1, 'email' => 'test@example.test'])
+        ->level('info')
+        ->toArray();
 ```
 
 ## Testing
