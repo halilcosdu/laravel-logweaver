@@ -2,6 +2,14 @@
 
 All notable changes to `laravel-logweaver` will be documented in this file.
 
+## v1.0.2 - 2024-04-16
+
+Release Notes:
+
+- Updated the test case 'should throw exception if parameters are invalid' in `tests/LogWeaverTest.php`.
+- The test now checks if an exception is thrown when invalid parameters are passed to the `LogWeaver` class.
+- This ensures the robustness of the `LogWeaver` class by validating its error handling capabilities.
+
 ## v1.0.1 - 2024-04-16
 
 This release includes updates to the test suite of the `LogWeaver` class in the Laravel LogWeaver project. The tests have been rewritten using the Pest PHP testing framework, which provides a more expressive and streamlined syntax compared to traditional PHPUnit tests.
@@ -48,6 +56,7 @@ $log = LogWeaver::description('User logged in')
     ->toArray();
 
 
+
 ```
 Logging a system error:
 
@@ -57,6 +66,7 @@ $log = LogWeaver::description('System error occurred')
     ->content(['error' => 'Database connection failed'])
     ->level('error')
     ->toArray();
+
 
 
 ```
@@ -70,6 +80,7 @@ $log = LogWeaver::description('Payment gateway down')
     ->toArray();
 
 
+
 ```
 Logging a warning:
 
@@ -79,6 +90,7 @@ $log = LogWeaver::description('Disk space running low')
     ->content(['disk_space' => '10% remaining'])
     ->level('warning')
     ->toArray();
+
 
 
 ```
@@ -94,6 +106,7 @@ $log = LogWeaver::description('User registered')
     ->toArray();
 
 
+
 ```
 #### Installation
 
@@ -103,11 +116,13 @@ You can install the package via composer:
 composer require halilcosdu/laravel-logweaver
 
 
+
 ```
 You can publish the config file with:
 
 ```bash
 php artisan vendor:publish --tag="logweaver-config"
+
 
 
 ```
@@ -117,6 +132,7 @@ You can run the tests with:
 
 ```bash
 composer test
+
 
 
 ```
