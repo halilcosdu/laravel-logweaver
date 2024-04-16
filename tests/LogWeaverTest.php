@@ -67,7 +67,7 @@ it('can validate parameters', function () {
 
 it('should throw exception if parameters are invalid', function () {
     $logWeaver = new LogWeaver();
-    $logWeaver->directory('custom_logs');
+    $logWeaver->logResource('custom_logs');
 
     try {
         $logWeaver->toArray();
