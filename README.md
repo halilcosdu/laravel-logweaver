@@ -24,6 +24,10 @@ Laravel LogWeaver is a PHP package designed to provide a simple and flexible way
 You can install the package via composer:
 
 ```bash
+composer require halilcosdu/laravel-logweaver
+```
+
+```bash
 composer require league/flysystem-aws-s3-v3 "^3.0" --with-all-dependencies
 composer require league/flysystem-ftp "^3.0"
 composer require league/flysystem-sftp-v3 "^3.0"
@@ -33,10 +37,6 @@ AWS_SECRET_ACCESS_KEY=
 AWS_DEFAULT_REGION=us-east-1
 AWS_BUCKET=
 AWS_USE_PATH_STYLE_ENDPOINT=false
-```
-
-```bash
-composer require halilcosdu/laravel-logweaver
 ```
 
 You can publish the config file with:
