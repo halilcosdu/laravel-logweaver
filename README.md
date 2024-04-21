@@ -24,6 +24,14 @@ Laravel LogWeaver is a PHP package designed to provide a simple and flexible way
 You can install the package via composer:
 
 ```bash
+AWS_ACCESS_KEY_ID=
+AWS_SECRET_ACCESS_KEY=
+AWS_DEFAULT_REGION=us-east-1
+AWS_BUCKET=
+AWS_USE_PATH_STYLE_ENDPOINT=false
+```
+
+```bash
 composer require halilcosdu/laravel-logweaver
 ```
 
