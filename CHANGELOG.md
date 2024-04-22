@@ -2,6 +2,18 @@
 
 All notable changes to `laravel-logweaver` will be documented in this file.
 
+## v1.0.3 - 2024-04-22
+
+Release Notes for v1.0.3:
+
+In this release, a new function `download` has been added to the `LogWeaver` class. This function allows you to download a log file from the storage disk.
+
+Here's a brief overview of the new function:
+
+- `download(string $path, $name = null, array $headers = []): StreamedResponse`: This function takes in three parameters: `$path`, `$name`, and `$headers`. The `$path` parameter is the path of the file in the storage disk. The `$name` parameter is an optional parameter that specifies the name of the downloaded file. The `$headers` parameter is an optional array of headers to be included in the response. The function returns a `StreamedResponse`, which represents the response of the file download.
+
+This new function enhances the functionality of the `LogWeaver` class by providing an easy way to download log files.
+
 ## v1.0.2 - 2024-04-16
 
 Release Notes:
@@ -57,6 +69,7 @@ $log = LogWeaver::description('User logged in')
 
 
 
+
 ```
 Logging a system error:
 
@@ -66,6 +79,7 @@ $log = LogWeaver::description('System error occurred')
     ->content(['error' => 'Database connection failed'])
     ->level('error')
     ->toArray();
+
 
 
 
@@ -81,6 +95,7 @@ $log = LogWeaver::description('Payment gateway down')
 
 
 
+
 ```
 Logging a warning:
 
@@ -90,6 +105,7 @@ $log = LogWeaver::description('Disk space running low')
     ->content(['disk_space' => '10% remaining'])
     ->level('warning')
     ->toArray();
+
 
 
 
@@ -107,6 +123,7 @@ $log = LogWeaver::description('User registered')
 
 
 
+
 ```
 #### Installation
 
@@ -114,6 +131,7 @@ You can install the package via composer:
 
 ```bash
 composer require halilcosdu/laravel-logweaver
+
 
 
 
@@ -125,6 +143,7 @@ php artisan vendor:publish --tag="logweaver-config"
 
 
 
+
 ```
 #### Testing
 
@@ -132,6 +151,7 @@ You can run the tests with:
 
 ```bash
 composer test
+
 
 
 
