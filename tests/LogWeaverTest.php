@@ -4,6 +4,7 @@ namespace Workbench\App;
 
 use Exception;
 use HalilCosdu\LogWeaver\LogWeaver;
+use Symfony\Component\HttpFoundation\StreamedResponse;
 
 it('can be instantiated', function () {
     $logWeaver = new LogWeaver();
@@ -74,4 +75,28 @@ it('should throw exception if parameters are invalid', function () {
     } catch (Exception $e) {
         expect($e->getMessage())->not()->toBeEmpty();
     }
+});
+
+it('should download log', function () {
+    $logWeaver = new LogWeaver();
+    $logWeaver->description('Payment gateway down')
+        ->logResource('event')
+        ->content(['gateway' => 'Stripe', 'status' => 'down'])
+        ->level('critical')
+        ->disk('local')
+        ->log('log.json');
+
+    expect($logWeaver->download('log.json'))->toBeInstanceOf(StreamedResponse::class);
+});
+
+it('should log', function () {
+    $logWeaver = new LogWeaver();
+    $result = $logWeaver->description('Payment gateway down')
+        ->logResource('event')
+        ->content(['gateway' => 'Stripe', 'status' => 'down'])
+        ->level('critical')
+        ->disk('local')
+        ->log();
+
+    expect($result)->toMatchArray(['status' => true]);
 });

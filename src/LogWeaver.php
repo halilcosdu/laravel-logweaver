@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Sleep;
 use Illuminate\Support\Str;
+use Symfony\Component\HttpFoundation\StreamedResponse;
 
 class LogWeaver implements Arrayable, Jsonable
 {
@@ -173,6 +174,11 @@ class LogWeaver implements Arrayable, Jsonable
                 throw new Exception('Timeout exceeded while trying to get content from Storage.');
             }
         } while ($isFileVisible !== true);
+    }
+
+    public function download(string $path, $name = null, array $headers = []): StreamedResponse
+    {
+        return Storage::disk($this->getDisk())->download($path, $name, $headers);
     }
 
     /**

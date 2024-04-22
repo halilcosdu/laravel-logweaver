@@ -97,6 +97,10 @@ $log = LogWeaver::description('User registered')
     ->log();
 ```
 
+```php
+$response = LogWeaver::download(string $path, $name = null, array $headers = []): StreamedResponse;
+```
+
 ## Testing
 
 ```bash
