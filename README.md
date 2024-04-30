@@ -102,6 +102,8 @@ $log = LogWeaver::description('User registered')
 
 ```php
 $response = LogWeaver::download(string $path, $name = null, array $headers = []): StreamedResponse;
+$response = LogWeaver::delete(string|array $paths): bool;
+$response = LogWeaver::get(string $path): bool;
 ```
 
 ## Testing

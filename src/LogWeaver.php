@@ -197,6 +197,16 @@ class LogWeaver implements Arrayable, Jsonable
         return Storage::disk($this->getDisk())->download($path, $name, $headers);
     }
 
+    public function get(string $path): string
+    {
+        return Storage::disk($this->getDisk())->get($path);
+    }
+
+    public function delete(string|array $paths): bool
+    {
+        return Storage::disk($this->getDisk())->delete($paths);
+    }
+
     /**
      * @throws Exception
      */
