@@ -60,8 +60,9 @@ return [
 ```php
 $log = LogWeaver::description('User logged in')
     ->logResource('event')
-    ->content(['user_id' => 1, 'email' => 'test@example.com'])
+    ->content(['email' => 'test@example.com'])
     ->level('info')
+    ->relation(['user_id' => 1])
     ->toArray();
 ```
 

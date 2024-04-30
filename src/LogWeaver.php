@@ -25,6 +25,8 @@ class LogWeaver implements Arrayable, Jsonable
 
     private string $directory = 'logs';
 
+    private ?array $relation = null;
+
     public function getDescription(): string
     {
         return $this->description;
@@ -40,6 +42,18 @@ class LogWeaver implements Arrayable, Jsonable
         $this->directory = $directory;
 
         return $this;
+    }
+
+    public function relation(?array $relation): static
+    {
+        $this->relation = $relation;
+
+        return $this;
+    }
+
+    public function getRelation(): ?array
+    {
+        return $this->relation;
     }
 
     public function getLogResource(): string
@@ -106,6 +120,7 @@ class LogWeaver implements Arrayable, Jsonable
             'log_resource' => $this->getLogResource(),
             'description' => $this->getDescription(),
             'content' => $this->getContent(),
+            'relation' => $this->getRelation(),
         ];
 
         $rules = [
@@ -138,6 +153,7 @@ class LogWeaver implements Arrayable, Jsonable
             'level' => $this->getLevel(),
             'description' => $this->getDescription(),
             'content' => $this->getContent(),
+            'relation' => $this->getRelation(),
         ];
     }
 

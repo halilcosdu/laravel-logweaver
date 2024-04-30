@@ -14,6 +14,7 @@ use Symfony\Component\HttpFoundation\StreamedResponse;
  * @method static \HalilCosdu\LogWeaver\LogWeaver content(array $content): static
  * @method static \HalilCosdu\LogWeaver\LogWeaver disk(string $disk): static
  * @method static \HalilCosdu\LogWeaver\LogWeaver directory(string $directory): static
+ * @method static \HalilCosdu\LogWeaver\LogWeaver relation(?array $relation): static
  * @method static \HalilCosdu\LogWeaver\LogWeaver log(?string $path = null, bool $wait = false): array
  * @method static \HalilCosdu\LogWeaver\LogWeaver download(string $path, $name = null, array $headers = []): StreamedResponse
  * @method array toArray(): array
