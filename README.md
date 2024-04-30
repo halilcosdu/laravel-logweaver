@@ -31,7 +31,9 @@ composer require halilcosdu/laravel-logweaver
 composer require league/flysystem-aws-s3-v3 "^3.0" --with-all-dependencies
 composer require league/flysystem-ftp "^3.0"
 composer require league/flysystem-sftp-v3 "^3.0"
+```
 
+```bash
 AWS_ACCESS_KEY_ID=
 AWS_SECRET_ACCESS_KEY=
 AWS_DEFAULT_REGION=us-east-1
