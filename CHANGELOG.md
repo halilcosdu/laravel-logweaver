@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-logweaver` will be documented in this file.
 
+## v1.0.5 - 2024-04-30
+
+**Full Changelog**: https://github.com/halilcosdu/laravel-logweaver/compare/v1.0.4...v1.0.5
+
 ## v1.0.4 - 2024-04-30
 
 ### What's Changed
@@ -79,6 +83,7 @@ $log = LogWeaver::description('User logged in')
 
 
 
+
 ```
 Logging a system error:
 
@@ -88,6 +93,7 @@ $log = LogWeaver::description('System error occurred')
     ->content(['error' => 'Database connection failed'])
     ->level('error')
     ->toArray();
+
 
 
 
@@ -107,6 +113,7 @@ $log = LogWeaver::description('Payment gateway down')
 
 
 
+
 ```
 Logging a warning:
 
@@ -116,6 +123,7 @@ $log = LogWeaver::description('Disk space running low')
     ->content(['disk_space' => '10% remaining'])
     ->level('warning')
     ->toArray();
+
 
 
 
@@ -137,6 +145,7 @@ $log = LogWeaver::description('User registered')
 
 
 
+
 ```
 #### Installation
 
@@ -144,6 +153,7 @@ You can install the package via composer:
 
 ```bash
 composer require halilcosdu/laravel-logweaver
+
 
 
 
@@ -159,6 +169,7 @@ php artisan vendor:publish --tag="logweaver-config"
 
 
 
+
 ```
 #### Testing
 
@@ -166,6 +177,7 @@ You can run the tests with:
 
 ```bash
 composer test
+
 
 
 
