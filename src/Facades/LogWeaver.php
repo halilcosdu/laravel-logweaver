@@ -18,6 +18,7 @@ use Symfony\Component\HttpFoundation\StreamedResponse;
  * @method static \HalilCosdu\LogWeaver\LogWeaver log(?string $path = null, bool $wait = false): array
  * @method static \HalilCosdu\LogWeaver\LogWeaver download(string $path, $name = null, array $headers = []): StreamedResponse
  * @method static \HalilCosdu\LogWeaver\LogWeaver delete(string|array $paths): bool
+ * @method static \HalilCosdu\LogWeaver\LogWeaver validation(?bool $validation): static
  * @method static \HalilCosdu\LogWeaver\LogWeaver get(string $path): string
  * @method array toArray(): array
  * @method string toJson($options = 0): false|string
