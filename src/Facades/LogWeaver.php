@@ -20,8 +20,8 @@ use Symfony\Component\HttpFoundation\StreamedResponse;
  * @method static \HalilCosdu\LogWeaver\LogWeaver delete(string|array $paths): bool
  * @method static \HalilCosdu\LogWeaver\LogWeaver validation(?bool $validation): static
  * @method static \HalilCosdu\LogWeaver\LogWeaver get(string $path): string
- * @method array toArray(): array
- * @method string toJson($options = 0): false|string
+ * @method static \HalilCosdu\LogWeaver\LogWeaver toArray(): array
+ * @method static \HalilCosdu\LogWeaver\LogWeaver toJson($options = 0): false|string
  */
 class LogWeaver extends Facade
 {

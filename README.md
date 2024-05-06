@@ -58,6 +58,23 @@ return [
 ## Usage
 
 ```php
+\HalilCosdu\LogWeaver\Facades\LogWeaver::description(string $description): static
+\HalilCosdu\LogWeaver\Facades\LogWeaver::logResource(string $logResource): static
+\HalilCosdu\LogWeaver\Facades\LogWeaver::level(string $level): static
+\HalilCosdu\LogWeaver\Facades\LogWeaver::content(array $content): static
+\HalilCosdu\LogWeaver\Facades\LogWeaver::disk(string $disk): static
+\HalilCosdu\LogWeaver\Facades\LogWeaver::directory(string $directory): static
+\HalilCosdu\LogWeaver\Facades\LogWeaver::relation(?array $relation): static
+\HalilCosdu\LogWeaver\Facades\LogWeaver::log(?string $path = null, bool $wait = false): array
+\HalilCosdu\LogWeaver\Facades\LogWeaver::download(string $path, $name = null, array $headers = []): StreamedResponse
+\HalilCosdu\LogWeaver\Facades\LogWeaver::delete(string|array $paths): bool
+\HalilCosdu\LogWeaver\Facades\LogWeaver::validation(?bool $validation): static
+\HalilCosdu\LogWeaver\Facades\LogWeaver::get(string $path): string
+\HalilCosdu\LogWeaver\Facades\LogWeaver::toArray(): array
+\HalilCosdu\LogWeaver\Facades\LogWeaver::toJson($options = 0): false|string
+```
+
+```php
 $log = LogWeaver::description('User logged in')
     ->logResource('event')
     ->content(['email' => 'test@example.com'])
