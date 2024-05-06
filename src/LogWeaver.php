@@ -27,6 +27,20 @@ class LogWeaver implements Arrayable, Jsonable
 
     private ?array $relation = null;
 
+    private ?bool $validate = true;
+
+    public function validate(?bool $validate): static
+    {
+        $this->validate = $validate;
+
+        return $this;
+    }
+
+    public function getValidate(): ?bool
+    {
+        return $this->validate;
+    }
+
     public function getDescription(): string
     {
         return $this->description;
@@ -113,6 +127,10 @@ class LogWeaver implements Arrayable, Jsonable
 
     private function validateParameters(): void
     {
+        if (! $this->getValidate()) {
+            return;
+        }
+
         $data = [
             'disk' => $this->getDisk(),
             'directory' => $this->getDirectory(),
@@ -128,7 +146,7 @@ class LogWeaver implements Arrayable, Jsonable
             'log_resource' => ['required', 'in:system,event'],
             'description' => ['required', 'string'],
             'directory' => ['string'],
-            'disk' => ['string', 'in:s3,local,ftp,sftp'],
+            'disk' => ['string', 'in:s3,local,ftp,sftp,public'],
             'content' => ['required', 'array'],
         ];
 
@@ -154,6 +172,7 @@ class LogWeaver implements Arrayable, Jsonable
             'description' => $this->getDescription(),
             'content' => $this->getContent(),
             'relation' => $this->getRelation(),
+            'validate' => $this->getValidate(),
         ];
     }
 
