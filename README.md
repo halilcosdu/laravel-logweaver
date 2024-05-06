@@ -99,6 +99,32 @@ $log = LogWeaver::description('User registered')
     ->directory('custom_logs')
     ->log();
 ```
+If you want to disable built-in validation, you can use the following methods:
+
+Built-in validations are:
+
+```php
+$rules = [
+    'level' => ['required', 'in:info,warning,error,critical'],
+    'log_resource' => ['required', 'in:system,event'],
+    'description' => ['required', 'string'],
+    'directory' => ['string'],
+    'disk' => ['string', 'in:s3,local,ftp,sftp,public'],
+    'content' => ['required', 'array'],
+];
+```
+
+```php
+$log = LogWeaver::description('User registered')
+    ->validation(false)
+    ->logResource('custom_input')
+    ->content(['user_id' => 2, 'email' => 'newuser@example.com'])
+    ->level('custom_input')
+    ->disk('custom_input')
+    ->directory('custom_logs')
+    ->log();
+```
+
 
 ```php
 $response = LogWeaver::download(string $path, $name = null, array $headers = []): StreamedResponse;
